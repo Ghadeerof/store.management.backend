@@ -3,6 +3,9 @@ package com.maids.cc.store.management.backend.entity;
 import com.maids.cc.store.management.backend.model.BaseClass;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class SaleItem extends BaseClass {
@@ -11,6 +14,14 @@ public class SaleItem extends BaseClass {
     private Integer quantity;
 
     private float price;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="product_id")
+    private Product product;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="sale_id")
+    private Sale sale;
     //endregion
 
     //region Constructors
@@ -39,5 +50,22 @@ public class SaleItem extends BaseClass {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public Sale getSale() {
+        return sale;
+    }
+
+    public void setSale(Sale sale) {
+        this.sale = sale;
+    }
+
     //endregion
 }

@@ -2,7 +2,12 @@ package com.maids.cc.store.management.backend.entity;
 
 import com.maids.cc.store.management.backend.model.BaseClass;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Category extends BaseClass {
@@ -11,10 +16,14 @@ public class Category extends BaseClass {
     private String name;
 
     private String description;
+
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Product> products;
     //endregion
 
     //region Constructors
     public Category() {
+        products = new HashSet<>();
     }
 
     public Category(String name, String description) {
