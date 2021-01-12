@@ -1,6 +1,6 @@
 package com.maids.cc.store.management.backend.dto.response;
 
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 
 public class SaleResponseDto {
@@ -15,5 +15,5 @@ public class SaleResponseDto {
 
     public String sellerFullName;
 
-    public Set<SaleItemResponseDto> saleItemResponseDtoSet;
+    public List<SaleItemResponseDto> saleItemResponseDtoSet;
 }
