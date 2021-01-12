@@ -13,7 +13,9 @@ import javax.sql.DataSource;
 
 @Configuration
 @SpringBootApplication
-//@ComponentScan({""})
+@ComponentScan({
+		"com.maids.cc.store.management.backend.repository"
+})
 @EntityScan("com.maids.cc.store.management.backend.entity")
 public class Application extends SpringBootServletInitializer implements CommandLineRunner {
 
