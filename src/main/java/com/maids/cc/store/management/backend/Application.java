@@ -1,5 +1,7 @@
 package com.maids.cc.store.management.backend;
 
+import com.maids.cc.store.management.backend.repository.*;
+import com.maids.cc.store.management.backend.seeder.Seeder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,6 +27,27 @@ public class Application extends SpringBootServletInitializer implements Command
 	@Autowired
 	DataSource dataSource;
 
+	@Autowired
+	CategoryRepository categoryRepository;
+
+	@Autowired
+	ClientRepository clientRepository;
+
+	@Autowired
+	LocationRepository locationRepository;
+
+	@Autowired
+	ProductRepository productRepository;
+
+	@Autowired
+	SaleRepository saleRepository;
+
+	@Autowired
+	SaleItemRepository saleItemRepository;
+
+	@Autowired
+	SellerRepository sellerRepository;
+
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
@@ -33,8 +56,16 @@ public class Application extends SpringBootServletInitializer implements Command
 	public void run(String... args) {
 		try{
 			System.out.println("Our DataSource is = " + dataSource);
+			seedDatabase();
 		}catch (Exception ex){
 			System.out.println("Store Management Application : " + ex.getMessage());
 		}
+	}
+
+
+	private void seedDatabase(){
+		new Seeder(categoryRepository,clientRepository,locationRepository,productRepository,
+				saleItemRepository,saleRepository, sellerRepository)
+				.seedDb();
 	}
 }
