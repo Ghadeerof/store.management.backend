@@ -68,5 +68,13 @@ public class Location extends BaseClass {
     public void setSellerSet(Set<Seller> sellerSet) {
         this.sellerSet = sellerSet;
     }
+
+    public void addSeller(Seller seller){
+        this.sellerSet.add(seller);
+    }
+
+    public void removeSeller(Seller seller){
+        this.sellerSet.remove(seller);
+    }
     //endregion
 }

@@ -54,5 +54,12 @@ public class Sale extends BaseClass {
         this.seller = seller;
     }
 
+    public void addSaleItem(SaleItem saleItem){
+        this.saleItemSet.add(saleItem);
+    }
+
+    public void removeSaleItem(SaleItem saleItem){
+        this.saleItemSet.remove(saleItem);
+    }
     //endregion
 }

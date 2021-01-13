@@ -37,5 +37,13 @@ public class Client extends Person {
     public void setSaleSet(Set<Sale> saleSet) {
         this.saleSet = saleSet;
     }
+
+    public void addSale(Sale sale){
+        this.saleSet.add(sale);
+    }
+
+    public void removeSale(Sale sale){
+        this.saleSet.remove(sale);
+    }
     //endregion
 }

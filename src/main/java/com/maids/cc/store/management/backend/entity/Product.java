@@ -89,5 +89,13 @@ public class Product extends BaseClass {
         this.saleItemSet = saleItemSet;
     }
 
+    public void addSaleItem(SaleItem saleItem){
+        this.saleItemSet.add(saleItem);
+    }
+
+    public void removeSaleItem(SaleItem saleItem){
+        this.saleItemSet.remove(saleItem);
+    }
+
     //endregion
 }

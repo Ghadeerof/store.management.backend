@@ -48,5 +48,12 @@ public class Seller extends Person {
         this.location = location;
     }
 
+    public void addSale(Sale sale){
+        this.saleSet.add(sale);
+    }
+
+    public void removeSale(Sale sale){
+        this.saleSet.remove(sale);
+    }
     //endregion
 }

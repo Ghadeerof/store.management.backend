@@ -26,7 +26,7 @@ public interface SaleItemRepository extends CrudRepository<SaleItem, UUID> {
     void delete(UUID id);
 
     @Query(value = "SELECT si FROM SaleItem si WHERE si.sale.id = ?1")
-    List<SaleItem> getAllItemsOfSale(UUID saleId);
+    List<SaleItem> getAllSaleItems(UUID saleId);
 
     @Query(value = "SELECT si FROM SaleItem si WHERE si.product.id = ?1")
     List<SaleItem> getAllSaleItemsOfProduct(UUID productId);

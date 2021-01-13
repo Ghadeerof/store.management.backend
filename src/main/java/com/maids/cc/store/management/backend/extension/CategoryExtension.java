@@ -6,7 +6,7 @@ import com.maids.cc.store.management.backend.entity.Category;
 
 public class CategoryExtension {
 
-    public static Category categoryEntity(CategoryRequestDto categoryRequestDto){
+    public static Category toCategoryEntity(CategoryRequestDto categoryRequestDto){
 
         Category category = new Category();
 
