@@ -67,19 +67,19 @@ public class CategoryServiceTest {
 
         //region mock actions
 
-        //region add client case
+        //region add category case
         when(categoryRepository.save(any(Category.class))).thenReturn(actualCategory);
         //endregion
 
-        //region get client case
+        //region get category case
         when(categoryRepository.get(id)).thenReturn(actualCategory);
         //endregion
 
-        //region delete client case
+        //region delete category case
         doNothing().when(categoryRepository).delete(id);
         //endregion
 
-        //region get all clients case
+        //region get all categories case
         when(categoryRepository.getAll()).thenReturn(categoriesList);
         //endregion
 
