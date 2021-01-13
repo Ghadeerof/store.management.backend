@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 @ComponentScan({
 		"com.maids.cc.store.management.backend.config",
 		"com.maids.cc.store.management.backend.controller",
-		"com.maids.cc.store.management.backend.service",
+        "com.maids.cc.store.management.backend.service",
 		"com.maids.cc.store.management.backend.repository"
 })
 @EntityScan("com.maids.cc.store.management.backend.entity")

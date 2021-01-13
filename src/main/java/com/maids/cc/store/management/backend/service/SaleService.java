@@ -3,7 +3,6 @@ package com.maids.cc.store.management.backend.service;
 import com.maids.cc.store.management.backend.dto.request.SaleRequestDto;
 import com.maids.cc.store.management.backend.dto.response.SaleResponseDto;
 import com.maids.cc.store.management.backend.entity.Client;
-import com.maids.cc.store.management.backend.entity.SaleItem;
 import com.maids.cc.store.management.backend.entity.Seller;
 import com.maids.cc.store.management.backend.entity.Sale;
 import com.maids.cc.store.management.backend.extension.SaleExtension;
@@ -16,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
