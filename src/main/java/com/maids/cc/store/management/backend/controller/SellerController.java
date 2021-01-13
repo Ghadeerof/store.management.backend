@@ -86,6 +86,22 @@ public class SellerController {
     }
     //endregion
 
+    //region Put
+    @ApiOperation(value = "update a seller to the database", response = SellerResponseDto.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "seller has been updated successfully!"),
+            @ApiResponse(code = 401, message = "Unauthorized request"),
+            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
+    })
+    @PutMapping(value = "{Id}")
+    public ResponseEntity<SellerResponseDto> updateSeller(@PathVariable UUID Id, @RequestBody SellerRequestDto dto) {
+
+        ResponseEntity<SellerResponseDto> result = sellerService.updateSeller(Id, dto);
+
+        return result;
+    }
+    //endregion
+
     //region Delete
     @ApiOperation(value = "Delete specific seller from the database", response = boolean.class)
     @ApiResponses(value = {
