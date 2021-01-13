@@ -56,7 +56,7 @@ public class Application extends SpringBootServletInitializer implements Command
 	public void run(String... args) {
 		try{
 			System.out.println("Our DataSource is = " + dataSource);
-			seedDatabase();
+			//seedDatabase();
 		}catch (Exception ex){
 			System.out.println("Store Management Application : " + ex.getMessage());
 		}

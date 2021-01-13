@@ -15,5 +15,7 @@ public class SaleResponseDto {
 
     public String sellerFullName;
 
+    public float total;
+
     public List<SaleItemResponseDto> saleItemResponseDtoSet;
 }
