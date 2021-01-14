@@ -3,15 +3,12 @@ package com.maids.cc.store.management.backend.test.controller;
 import com.maids.cc.store.management.backend.entity.Category;
 import com.maids.cc.store.management.backend.service.CategoryService;
 import com.maids.cc.store.management.backend.controller.CategoryController;
-import com.maids.cc.store.management.backend.entity.Category;
 import com.maids.cc.store.management.backend.dto.request.CategoryRequestDto;
 import com.maids.cc.store.management.backend.dto.response.CategoryResponseDto;
 
 import org.mockito.Mock;
 
-
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 import org.junit.Before;
