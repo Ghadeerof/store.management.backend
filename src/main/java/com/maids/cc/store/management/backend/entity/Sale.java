@@ -62,4 +62,13 @@ public class Sale extends BaseClass {
         this.saleItemSet.remove(saleItem);
     }
     //endregion
+
+    //region Override methods
+    @Override
+    public String toString(){
+        return "SaleID : " + this.getId()
+                + ", ClientID : " + this.client.getId()
+                + ", SellerID : " + this.seller.getId();
+    }
+    //endregion
 }

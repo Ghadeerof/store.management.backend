@@ -6,6 +6,7 @@ import com.maids.cc.store.management.backend.entity.Client;
 import com.maids.cc.store.management.backend.entity.Seller;
 import com.maids.cc.store.management.backend.entity.Sale;
 import com.maids.cc.store.management.backend.extension.SaleExtension;
+import com.maids.cc.store.management.backend.logger.Logger;
 import com.maids.cc.store.management.backend.repository.ClientRepository;
 import com.maids.cc.store.management.backend.repository.SaleRepository;
 import com.maids.cc.store.management.backend.repository.SellerRepository;
@@ -120,6 +121,8 @@ public class SaleService {
 
             SaleResponseDto responseDto = SaleExtension.toSaleDto(addedSale);
 
+            Logger.log("Sale","Add",addedSale.toString());
+
             return new ResponseEntity<>(responseDto, HttpStatus.ACCEPTED);
         }catch (Exception e){
             return new ResponseEntity<>(null,HttpStatus.FAILED_DEPENDENCY);
@@ -134,7 +137,7 @@ public class SaleService {
         }
 
         saleRepository.delete(id);
-
+        Logger.log("Sale","Delete",sale.toString());
         return true;
     }
 }

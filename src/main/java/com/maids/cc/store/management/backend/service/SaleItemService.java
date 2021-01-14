@@ -6,6 +6,7 @@ import com.maids.cc.store.management.backend.entity.Product;
 import com.maids.cc.store.management.backend.entity.Sale;
 import com.maids.cc.store.management.backend.entity.SaleItem;
 import com.maids.cc.store.management.backend.extension.SaleItemExtension;
+import com.maids.cc.store.management.backend.logger.Logger;
 import com.maids.cc.store.management.backend.repository.ProductRepository;
 import com.maids.cc.store.management.backend.repository.SaleItemRepository;
 import com.maids.cc.store.management.backend.repository.SaleRepository;
@@ -120,6 +121,7 @@ public class SaleItemService {
 
             SaleItemResponseDto responseDto = SaleItemExtension.toSaleItemDto(addedSaleItem);
 
+            Logger.log("SaleItem","Add",addedSaleItem.toString());
             return new ResponseEntity<>(responseDto, HttpStatus.ACCEPTED);
         }catch (Exception e){
             return new ResponseEntity<>(null,HttpStatus.FAILED_DEPENDENCY);
@@ -142,6 +144,8 @@ public class SaleItemService {
 
             SaleItemResponseDto responseDto = SaleItemExtension.toSaleItemDto(addedSaleItem);
 
+            Logger.log("SaleItem","Update",addedSaleItem.toString());
+
             return new ResponseEntity<>(responseDto,HttpStatus.ACCEPTED);
         }catch (Exception e){
             return new ResponseEntity<>(null,HttpStatus.FAILED_DEPENDENCY);
@@ -156,6 +160,8 @@ public class SaleItemService {
         }
 
         saleItemRepository.delete(id);
+
+        Logger.log("SaleItem","Delete",saleItem.toString());
 
         return true;
     }

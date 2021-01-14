@@ -68,4 +68,14 @@ public class SaleItem extends BaseClass {
     }
 
     //endregion
+
+    //region Override methods
+    @Override
+    public String toString(){
+        return "Sale Item ID : " + this.getId()
+                + ", ProductID : " + this.product.getId()
+                + ", Price : " + this.price
+                + ", Quantity : " + this.quantity;
+    }
+    //endregion
 }
