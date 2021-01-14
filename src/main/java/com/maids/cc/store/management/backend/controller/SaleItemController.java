@@ -1,6 +1,8 @@
 package com.maids.cc.store.management.backend.controller;
 
+import com.maids.cc.store.management.backend.dto.request.ProductRequestDto;
 import com.maids.cc.store.management.backend.dto.request.SaleItemRequestDto;
+import com.maids.cc.store.management.backend.dto.response.ProductResponseDto;
 import com.maids.cc.store.management.backend.dto.response.SaleItemResponseDto;
 import com.maids.cc.store.management.backend.service.SaleItemService;
 import io.swagger.annotations.Api;
@@ -95,6 +97,22 @@ public class SaleItemController {
     public ResponseEntity<SaleItemResponseDto> addSaleItem(@RequestBody SaleItemRequestDto dto) {
 
         ResponseEntity<SaleItemResponseDto> result = saleItemService.addSaleItem(dto);
+
+        return result;
+    }
+    //endregion
+
+    //region Put
+    @ApiOperation(value = "update a sale item to the database", response = SaleItemResponseDto.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "sale item has been updated successfully!"),
+            @ApiResponse(code = 401, message = "Unauthorized request"),
+            @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
+    })
+    @PutMapping(value = "{Id}")
+    public ResponseEntity<SaleItemResponseDto> updateSaleItem(@PathVariable UUID Id, @RequestBody SaleItemRequestDto dto) {
+
+        ResponseEntity<SaleItemResponseDto> result = saleItemService.updateSaleItem(Id, dto);
 
         return result;
     }
